@@ -1,0 +1,12 @@
+/* App-level styles are minimal — design system is in index.css */
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+  padding-top: 72px;
+  /* navbar height */
+}
