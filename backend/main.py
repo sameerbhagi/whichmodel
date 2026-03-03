@@ -20,6 +20,7 @@ ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:5173",
     "https://whichmodel.sammyinnovations.com",
+    "https://whichmodel.sammyinventions.com",
 ] + [o.strip() for o in _cors_origins if o.strip()]
 
 app.add_middleware(
@@ -28,6 +29,8 @@ app.add_middleware(
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    # Also allow all Vercel preview deployments
+    allow_origin_regex=r"https://.*\.vercel\.app",
 )
 
 # Register routers
